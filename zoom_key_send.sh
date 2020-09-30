@@ -4,7 +4,7 @@ set -e
 
 send_to_zoom() {
     # due to "-e" we'll stop if zoom window is not found.
-    zoom=$(xdotool search --name "Zoom Meeting ID:")
+    zoom=$(xdotool search --name "Zoom Meeting")
     cur_active=$(xdotool getactivewindow)
     cur_focus=$(xdotool getwindowfocus)
 

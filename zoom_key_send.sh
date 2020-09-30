@@ -2,6 +2,9 @@
 
 set -e
 
+DEFAULT_SHORTCUT='alt+a'
+SHORTCUT=${1:-$DEFAULT_SHORTCUT}
+
 send_to_zoom() {
     # due to "-e" we'll stop if zoom window is not found.
     zoom=$(xdotool search --name "Zoom Meeting")
@@ -18,4 +21,4 @@ send_to_zoom() {
     xdotool windowfocus "$cur_focus"
 }
 
-send_to_zoom "alt+a"
+send_to_zoom $SHORTCUT

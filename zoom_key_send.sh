@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
 DEFAULT_SHORTCUT='alt+a'
 SHORTCUT=${1:-$DEFAULT_SHORTCUT}

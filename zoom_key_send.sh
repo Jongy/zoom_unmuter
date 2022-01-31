@@ -10,7 +10,7 @@ send_to_zoom() {
     zoom=$(xdotool search --name "Zoom Meeting")
     cur_active=$(xdotool getactivewindow)
     cur_focus=$(xdotool getwindowfocus)
-    
+
     mouselocation=$(xdotool getmouselocation)
     mouseX=$(echo "$mouselocation" | cut -d' ' -f1 | cut -d':' -f2)
     mouseY=$(echo "$mouselocation" | cut -d' ' -f2 | cut -d':' -f2)

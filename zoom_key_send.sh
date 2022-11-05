@@ -3,6 +3,7 @@
 set -euo pipefail
 
 DEFAULT_SHORTCUT='alt+a'
+DEFAULT_WAIT_TIME=0.3
 SHORTCUT=${1:-$DEFAULT_SHORTCUT}
 
 send_to_zoom() {
@@ -19,8 +20,8 @@ send_to_zoom() {
     xdotool windowfocus "$zoom"
     xdotool windowactivate "$zoom"
     # without this sleep zoom doesn't get the key press.
-    sleep 0.3
-    xdotool key "$1"
+    sleep $DEFAULT_WAIT_TIME
+    xdotool key --clearmodifiers "$1"
 
     xdotool windowactivate "$cur_active"
     xdotool windowfocus "$cur_focus"
